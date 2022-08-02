@@ -1,0 +1,56 @@
+class Node:
+    def __init__(self,data=None):
+        self.data=data
+        self.link=None
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+    def display(self):
+        if self.head is None:
+            print("\nThe LinkedList is empty")
+        else:
+            n=self.head
+            print("\nThe LinkedList is : ",end=" ")
+            while n is not None:
+                print(n.data,"--------->",end=" ")
+                n=n.link
+    def add_begin(self,data):
+        new_node=Node(data)
+        new_node.link=self.head
+        self.head=new_node
+        print("\nThe element is added successfully at begnning!!",data)
+    def add_end(self,data):
+        new_node=Node(data)
+        if self.head is None:
+            self.head=new_node
+            print("\nThe element is added successfully at begnning as list was empty!!",data)
+        else:
+            n=self.head
+            while n.link is not None:
+                n=n.link
+            n.link=new_node
+            print("\nThe element is added successfully at end!!",data)
+    def add_m(self):
+        pass
+    def rm_begin(self):
+        pass
+    def rm_end(self):
+        pass
+    def rm_m(self):
+        pass
+    def clear(self):
+        self.head=None
+    def empty(self):
+        if self.head is None:
+            print("\nYes! the LinkedList is empty")
+        else:
+            print("\nNo! LinkedList contains some value please traverse")
+
+L=LinkedList()
+##L.display()
+L.add_begin(20)     
+L.add_end(30)
+L.add_begin(200) 
+L.add_end(500)
+L.display()
