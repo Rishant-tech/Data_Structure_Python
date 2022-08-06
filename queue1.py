@@ -8,12 +8,14 @@ class queue:
         self.front=self.que[0]
         self.rear=self.que[-1]        
     def dequeue(self):
-        print('removed element : ',self.que.pop(0))
+        
         if len(self.que)==0:
             print('Queue is now empty\n')
         else:
             self.front=self.que[0]
             self.rear=self.que[-1]
+            return
+        print('removed element : ',self.que.pop(0))
     def isFull(self):
         pass
     def isEmpty(self):
